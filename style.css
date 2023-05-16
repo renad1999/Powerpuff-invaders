@@ -1,24 +1,23 @@
 * {
     font-family: 'Noto Serif', serif;
-    box-sizing: border-box;
 }
 
 body {
     height: 100vh;
     margin: 1px;
+    background: url('../assets/space.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
-
 
 header { 
     text-align: center;
-    background: navy;
+    background: black;
     padding: 10px;
     color: pink;
 }
 
-
 .grid-wrapper{
-    height: 100vh;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,14 +25,15 @@ header {
 
 .grid {
     display: grid;
-    height: 100%;
     align-items: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    height: 500px;
     width: 500px;
     box-shadow: 0 0 20px 0 pink;
+    grid-template-rows: repeat(15, 1fr);
+    grid-template-columns: repeat(15, 1fr);
+    
 }
 
 .grid div {
@@ -44,19 +44,57 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
+    color: transparent;
 }
 
-.grid div.blossom {
-    background-image: url('../assets/blossom.jpeg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    cursor: pointer;
-}
+#score {
+    text-align: center;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 20px;
+  }
+  
+  #instructions {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 150px;
 
+  }
 
 .grid div.mojo {
     background-image: url('../assets/images.png');
     background-repeat: no-repeat;
     background-size: contain;
-    cursor: pointer;
+    animation-name: moveMojo;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: bottom center;
+    width: 20%;
+    height: 20%;
+  
+    
 }
+.shoot {
+    background-color: yellow;
+    border-radius: 30%;
+  }
+
+  .grid div.blossom {
+    background-image: url('../assets/blossom.jpeg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    width: 100%;
+    height: 100% ;
+}
+
+
